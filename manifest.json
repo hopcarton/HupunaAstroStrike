@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "Hupuna Astro Strike",
+  "version": "1.0.0",
+  "description": "Astro Strike",
+  "permissions": [],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Hupuna Astro Strike"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
