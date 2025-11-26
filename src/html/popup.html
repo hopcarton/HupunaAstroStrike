@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carton Astro Strike</title>
+    <link rel="stylesheet" href="../css/popup-style.css">
+</head>
+<body>
+    <div id="homeScreen" class="screen active">
+        <div class="popup-container">
+            <div class="game-logo">
+                <h1>Carton Astro Strike</h1>
+                <p class="subtitle">Classic arcade shooter</p>
+            </div>
+            
+            <div class="game-info">
+                <div class="info-item">
+                    <span class="icon">🎁</span>
+                    <span>Collect boxes to change weapons</span>
+                </div>
+                <div class="info-item">
+                    <span class="icon">⚡</span>
+                    <span>Upgrade weapon up to Lv.10</span>
+                </div>
+                <div class="info-item">
+                    <span class="icon">🛸</span>
+                    <span>5 enemy types and a powerful boss</span>
+                </div>
+            </div>
+
+            <button id="startHeroBtn" class="play-btn">
+                <span class="btn-text">SELECT SHIP</span>
+                <span class="btn-icon">➤</span>
+            </button>
+
+            <div class="stats">
+                <p><strong>How to play:</strong> Collect colored boxes to change bullets/weapons.</p>
+                <p><strong>Tip:</strong> Collect boxes of the <u>same color</u> to level up your weapon!</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="heroScreen" class="screen">
+        <div class="hero-container">
+            <h2>Choose Ship</h2>
+            
+            <div class="heroes-grid">
+                <div class="hero-card" data-hero="soldier">
+                    <div class="hero-visual">
+                        <img src="../../image/hero1.png" alt="Soldier" class="hero-img">
+                    </div>
+                    <h3>Soldier</h3>
+                    <p class="hero-skill">🚀 Basic Skin</p>
+                    <p class="hero-desc">Standard military-style ship.</p>
+                </div>
+
+                <div class="hero-card" data-hero="pyromancer">
+                    <div class="hero-visual">
+                        <img src="../../image/hero2.png" alt="Pyromancer" class="hero-img">
+                    </div>
+                    <h3>Pyromancer</h3>
+                    <p class="hero-skill">🛸 Modern Skin</p>
+                    <p class="hero-desc">Sleek, futuristic design.</p>
+                </div>
+
+                <div class="hero-card" data-hero="thunderlord">
+                    <div class="hero-visual">
+                        <img src="../../image/hero3.png" alt="Thunderlord" class="hero-img">
+                    </div>
+                    <h3>Thunderlord</h3>
+                    <p class="hero-skill">✈️ Future Skin</p>
+                    <p class="hero-desc">High-tech, aggressive look.</p>
+                </div>
+            </div>
+
+            <button id="backBtn" class="back-btn">← Back</button>
+        </div>
+    </div>
+
+    <script src="../js/popup.js"></script>
+</body>
+</html>

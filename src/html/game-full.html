@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bắn Gà - Chicken Invaders</title>
-    <link rel="stylesheet" href="game-full-style.css">
+    <title>Carton Astro Strike</title>
+    <link rel="stylesheet" href="../css/game-full-style.css">
 </head>
 <body>
     <div id="gameContainer">
         <div id="gameUI" class="game-ui">
             <div class="ui-left">
                 <div class="ui-item">
-                    <span class="ui-label">Điểm</span>
+                    <span class="ui-label">Score</span>
                     <span id="uiScore" class="ui-value">0</span>
                 </div>
                 <div class="ui-item">
@@ -20,16 +20,16 @@
                 </div>
             </div>
             <div class="ui-center">
-                <h1>🐔 BẮN GÀ 🐔</h1>
+                <h1>Carton Astro Strike</h1>
                 <p id="heroName" class="hero-name">Hero</p>
             </div>
             <div class="ui-right">
                 <div class="ui-item">
-                    <span class="ui-label">Sức khỏe</span>
+                    <span class="ui-label">Health</span>
                     <span id="uiHealth" class="ui-value health">❤️ 3</span>
                 </div>
                 <div class="ui-item">
-                    <span class="ui-label">Tia súng</span>
+                    <span class="ui-label">Weapon</span>
                     <span id="uiBullets" class="ui-value">1</span>
                 </div>
             </div>
@@ -39,30 +39,30 @@
 
         <div id="pauseMenu" class="pause-menu hidden">
             <div class="pause-content">
-                <h2>TẠMM DỪNG</h2>
+                <h2>PAUSED</h2>
                 <div class="pause-buttons">
-                    <button id="resumeBtn" class="menu-btn resume-btn">Tiếp Tục</button>
-                    <button id="exitBtn" class="menu-btn exit-btn">Thoát</button>
+                    <button id="resumeBtn" class="menu-btn resume-btn">Resume</button>
+                    <button id="exitBtn" class="menu-btn exit-btn">Exit</button>
                 </div>
             </div>
         </div>
 
         <div id="gameOverScreen" class="game-over-screen hidden">
             <div class="game-over-content">
-                <h2>GAME OVER</h2>
-                <div class="final-stats">
-                    <p>Điểm số: <span id="finalScore">0</span></p>
-                    <p>Wave: <span id="finalWave">1</span></p>
-                    <p>Gà tiêu diệt: <span id="finalChickens">0</span></p>
+                    <h2>GAME OVER</h2>
+                    <div class="final-stats">
+                        <p>Score: <span id="finalScore">0</span></p>
+                        <p>Wave: <span id="finalWave">1</span></p>
+                        <p>Enemies Destroyed: <span id="finalChickens">0</span></p>
+                    </div>
+                    <div class="game-over-buttons">
+                        <button id="restartBtn" class="menu-btn restart-btn">Restart</button>
+                        <button id="menuBtn" class="menu-btn menu-btn">Main Menu</button>
+                    </div>
                 </div>
-                <div class="game-over-buttons">
-                    <button id="restartBtn" class="menu-btn restart-btn">Chơi Lại</button>
-                    <button id="menuBtn" class="menu-btn menu-btn">Về Menu</button>
-                </div>
-            </div>
         </div>
     </div>
 
-    <script src="game-full.js"></script>
+    <script src="../js/game-full.js"></script>
 </body>
 </html>

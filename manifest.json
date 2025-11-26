@@ -1,12 +1,12 @@
 {
   "manifest_version": 3,
-  "name": "Hupuna Astro Strike",
+  "name": "Carton Astro Strike",
   "version": "1.0.0",
-  "description": "Astro Strike",
+  "description": "A fast-paced box-shooting mini game where you blast cardboard crates and rack up points. Simple, fun, and addictive!",
   "permissions": [],
   "action": {
-    "default_popup": "popup.html",
-    "default_title": "Hupuna Astro Strike"
+    "default_popup": "src/html/popup.html",
+    "default_title": "Carton Astro Strike"
   },
   "icons": {
     "16": "icons/icon16.png",

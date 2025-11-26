@@ -259,7 +259,7 @@ class ChickenInvadersGame {
 
     togglePause() {
         this.gamePaused = !this.gamePaused;
-        document.getElementById('pauseBtn').textContent = this.gamePaused ? 'Tiếp Tục' : 'Tạm Dừng';
+        document.getElementById('pauseBtn').textContent = this.gamePaused ? 'Resume' : 'Pause';
     }
 
     reset() {
@@ -279,7 +279,7 @@ class ChickenInvadersGame {
 
         document.getElementById('startBtn').disabled = false;
         document.getElementById('pauseBtn').disabled = true;
-        document.getElementById('pauseBtn').textContent = 'Tạm Dừng';
+        document.getElementById('pauseBtn').textContent = 'Pause';
 
         this.updateUI();
         this.draw();
@@ -435,7 +435,7 @@ class ChickenInvadersGame {
 
             this.ctx.fillStyle = '#FFF';
             this.ctx.font = '24px Arial';
-            this.ctx.fillText(`Điểm: ${this.score}`, this.width / 2, this.height / 2 + 10);
+            this.ctx.fillText(`Score: ${this.score}`, this.width / 2, this.height / 2 + 10);
             this.ctx.fillText(`Wave: ${this.wave}`, this.width / 2, this.height / 2 + 40);
         }
     }
