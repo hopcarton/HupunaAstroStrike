@@ -3,7 +3,10 @@
   "name": "Carton Astro Strike",
   "version": "1.0.0",
   "description": "A fast-paced box-shooting mini game where you blast cardboard crates and rack up points. Simple, fun, and addictive!",
-  "permissions": [],
+  "homepage_url": "https://hopcartondonghang.com/",
+  "permissions": [
+    "tabs"
+  ],
   "action": {
     "default_popup": "src/html/popup.html",
     "default_title": "Carton Astro Strike"

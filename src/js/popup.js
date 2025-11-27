@@ -1,31 +1,46 @@
-// Hero selection system (moved to src)
+// Hero selection system - Optimized
 let selectedHero = null;
 
-// Screen navigation
+// Cache DOM elements
+const DOM = {
+    startBtn: null,
+    backBtn: null,
+    homeScreen: null,
+    heroScreen: null,
+    heroCards: null
+};
+
+// Screen navigation - Optimized with cached elements and event delegation
 document.addEventListener('DOMContentLoaded', () => {
-    const startBtn = document.getElementById('startHeroBtn');
-    const backBtn = document.getElementById('backBtn');
-    if (startBtn) startBtn.addEventListener('click', () => {
-        document.getElementById('homeScreen').classList.remove('active');
-        document.getElementById('heroScreen').classList.add('active');
+    // Cache DOM elements once
+    DOM.startBtn = document.getElementById('startHeroBtn');
+    DOM.backBtn = document.getElementById('backBtn');
+    DOM.homeScreen = document.getElementById('homeScreen');
+    DOM.heroScreen = document.getElementById('heroScreen');
+    DOM.heroCards = document.querySelectorAll('.hero-card');
+    
+    // Navigation handlers
+    DOM.startBtn?.addEventListener('click', () => {
+        DOM.homeScreen?.classList.remove('active');
+        DOM.heroScreen?.classList.add('active');
     });
-    if (backBtn) backBtn.addEventListener('click', () => {
-        document.getElementById('heroScreen').classList.remove('active');
-        document.getElementById('homeScreen').classList.add('active');
+    
+    DOM.backBtn?.addEventListener('click', () => {
+        DOM.heroScreen?.classList.remove('active');
+        DOM.homeScreen?.classList.add('active');
         selectedHero = null;
-        document.querySelectorAll('.hero-card').forEach(card => {
-            card.classList.remove('selected');
-        });
+        DOM.heroCards.forEach(card => card.classList.remove('selected'));
     });
 
-    // Hero card selection
-    document.querySelectorAll('.hero-card').forEach(card => {
-        card.addEventListener('click', () => {
-            document.querySelectorAll('.hero-card').forEach(c => c.classList.remove('selected'));
-            card.classList.add('selected');
-            selectedHero = card.dataset.hero;
-            setTimeout(() => playGameWithHero(), 300);
-        });
+    // Event delegation for hero cards (more efficient)
+    DOM.heroScreen?.addEventListener('click', (e) => {
+        const card = e.target.closest('.hero-card');
+        if (!card) return;
+        
+        DOM.heroCards.forEach(c => c.classList.remove('selected'));
+        card.classList.add('selected');
+        selectedHero = card.dataset.hero;
+        setTimeout(playGameWithHero, 300);
     });
 });
 
@@ -34,10 +49,8 @@ function playGameWithHero() {
         alert('Please select a ship!');
         return;
     }
-
     chrome.tabs.create({
         url: chrome.runtime.getURL(`src/html/game-full.html?hero=${selectedHero}`)
     });
-
     window.close();
 }
