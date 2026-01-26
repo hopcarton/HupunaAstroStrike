@@ -49,8 +49,12 @@ function playGameWithHero() {
         alert('Please select a ship!');
         return;
     }
-    chrome.tabs.create({
-        url: chrome.runtime.getURL(`src/html/game-full.html?hero=${selectedHero}`)
+    // Use chrome.windows.create() instead of chrome.tabs.create() - no permission needed
+    chrome.windows.create({
+        url: chrome.runtime.getURL(`src/html/game-full.html?hero=${selectedHero}`),
+        type: 'popup',
+        width: 1200,
+        height: 800
     });
     window.close();
 }
